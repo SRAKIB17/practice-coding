@@ -14,7 +14,7 @@ function sha1(message: any) {
     }
 
     function utf8Encode(string: any) {
-        return unescape(encodeURIComponent(string));
+        return decodeURIComponent(encodeURIComponent(string));
     }
 
     let blockstart;
@@ -139,7 +139,7 @@ function sha1(message: any) {
 
 // HMAC function using SHA-1
 function hmacSHA1(key: string, message: string) {
-    const blockSize = 200; // Block size for SHA-1
+    const blockSize = 64; // Block size for SHA-1
     if (key.length > blockSize) {
         key = sha1(key); // Hash the key if it is longer than block size
     }
