@@ -110,3 +110,4 @@ export function sha512(message: string, salt: string): string {
 }
 
 
+console.log(sha512('5345', 'fsdfsfsd'))
